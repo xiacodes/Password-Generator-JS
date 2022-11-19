@@ -24,10 +24,8 @@ var specialCharacters = [
   '_',
   '.'
 ];
-
 // Array of numeric characters to be included in password
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-
 // Array of lowercase characters to be included in password
 var lowerCasedCharacters = [
   'a',
@@ -57,7 +55,6 @@ var lowerCasedCharacters = [
   'y',
   'z'
 ];
-
 // Array of uppercase characters to be included in password
 var upperCasedCharacters = [
   'A',
@@ -88,26 +85,50 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+
+// Extra variables
+var length;
+var numbers;
+var upperCase;
+var lowerCase;
+var special;
+var addons;
+
+
 // Function to prompt user for password options
 function getPasswordOptions() {
-  var length = parseInt(prompt("Length of password - between 10 and 64:)"));
-  var numbers = prompt("Include a number? [Yes/No]");
-  var upperCase = prompt("Include uppercase letters? [Yes/No]10");
-  var lowerCase = prompt("Include lowercase letters? [Yes/No]10");
-  var special = prompt("Include a special character? [Yes/No]10");
+  length = parseInt(prompt("Length of password - between 10 and 64:)"));
+  numbers = prompt("Include a number? [Yes/No]");
+  upperCase = prompt("Include uppercase letters? [Yes/No]");
+  lowerCase = prompt("Include lowercase letters? [Yes/No]");
+  special = prompt("Include a special character? [Yes/No]");
 }
-// getPasswordOptions();
+getPasswordOptions();
 
 // Function for getting a random element from an array
 function getRandom(arr) { 
   return arr[Math.floor(Math.random() * arr.length)];
 }
-alert(getRandom(lowerCasedCharacters));
 
 // Function to generate password with user input
 function generatePassword() {
 
+  //If they selected an option
+  if (numbers == "Yes") {
+    addons = getRandom(numericCharacters)
+  }
+  if (upperCase == "Yes") {
+    addons += getRandom(upperCasedCharacters)
+  }
+  if (lowerCase == "Yes") {
+    addons += getRandom(lowerCasedCharacters);
+  }
+  if (special == "Yes") {
+    addons += getRandom(specialCharacters)
+  }
 }
+generatePassword();
+alert("The password is " + addons);
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
