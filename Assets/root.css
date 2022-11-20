@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+body {
+  background-color:  #ffedff;
+}
+
+
+#myNav {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.578);
+  background-color: white;
+  font-family: 'Ubuntu', sans-serif;
+  
+}
+
+.navbar-brand {
+  font-family: 'Fredoka One', cursive;
+  color: rgb(247, 115, 170) !important;
+}
+
+.dropdown-item, .nav-link {
+  color: rgb(60, 60, 60) !important;
+  transition: 350ms;
+}
+
+.nav-link:hover {
+  color: rgb(89, 154, 210) !important;
+}
+
+.dropdown-item:hover {
+  color: rgb(247, 115, 170) !important;
+  background-color: aliceblue !important;
+}
+
+.dropdown-menu {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.126);
+  font-size: 0.85rem;
+}
